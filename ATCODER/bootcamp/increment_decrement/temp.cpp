@@ -4,6 +4,22 @@ typedef long long ll;
 
 void solve(){
 
+    std::string id;
+    int length;
+    int max = 0;
+    int count = 0;
+
+    std::cin >> length >> id;
+
+    for(auto x : id){
+        if(x == 'I')
+            count++;
+        else
+            count--;
+        max = std::max(max, count);
+    }
+
+    std::cout << max << '\n';
 }
 
 int main()
