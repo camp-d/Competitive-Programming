@@ -13,7 +13,11 @@ std::cin.tie(0);
 std::cout.tie(0);
 
 
-solve();
+int a, b;
+
+std::cin >> a >> b;
+
+std::cout << (a+b-3)/(a-1) << '\n';
 
 return 0;
 }
