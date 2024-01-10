@@ -1,2 +1,2 @@
-cp -r TEMPLATE $1
+cp -r ../TEMPLATE $1
 
