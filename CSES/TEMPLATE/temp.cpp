@@ -12,10 +12,8 @@ std::ios_base::sync_with_stdio(false);
 std::cin.tie(0); 
 std::cout.tie(0);
 
-ll t; 
-std::cin>>t; 
-while(t--) 
-    solve();
+
+solve();
 
 return 0;
 }
