@@ -4,35 +4,27 @@ typedef long long ll;
 
 void solve(){
 
-
     int n;
 
     std::cin >> n;
 
-    std::vector<int> nums(n, 0);
-
-    std::unordered_map<int, int> n2;
-
-    int count = 0;
-    int value;
+    std::vector<int>nums(n);
 
     for(auto &x : nums){
         std::cin >> x;
-        value = x;
-        n2.insert(std::make_pair(value, count));
-        count++;
     }
 
-    int max = -1;
+    std::vector<int> num2(nums);
 
-    for(int j {0}; j < (int)nums.size(); j++){
-        max = -1;
-        for(int i {0}; i < (int)nums.size(); i++){
-            if( i != j){
-                max = std::max(max, nums[i]);
-            }
+    std::sort(nums.begin(), nums.end());
+
+    for(int i {0}; i < (int)nums.size(); i++){
+        if(num2[i] != nums.back()){
+            std::cout << nums.back() << '\n';
         }
-        std::cout << max << '\n';
+        else{
+            std::cout << nums[nums.size()-2] << '\n';
+        }
     }
 
 
