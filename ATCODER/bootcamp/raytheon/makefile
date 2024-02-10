@@ -3,6 +3,11 @@ comp=g++
 comp_flags = -g -Wall
 
 #sol command is for random problems in ATCODER, CODEFORCES, NSES, etc..
+ascii : ascii.cpp
+	$(comp) $(comp_flags) ascii.cpp
+
+hex : hex.cpp
+	$(comp) $(comp_flags) hex.cpp
 
 sol : temp.cpp
 	$(comp) $(comp_flags) temp.cpp

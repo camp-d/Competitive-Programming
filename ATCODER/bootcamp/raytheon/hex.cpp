@@ -14,7 +14,7 @@ void enc(char* flag, int key){
 
 void dec(char* flag, unsigned key){
     char *start = flag;
-    std::cout << "Key before xor:" << key << std::endl;
+    //std::cout << "Key before xor:" << key << std::endl;
     while(*flag){
         *(flag) -= 3;
         key = key*13 +37;
@@ -22,13 +22,7 @@ void dec(char* flag, unsigned key){
         flag++;
     }
     printf("%s\n", start);
-    std::cout << "Key after xor:" << key << std::endl;
-}
-
-
-void test(){
-    //test++ += 1;
-    //if 
+    //std::cout << "Key after xor:" << key << std::endl;
 }
 
 int main()
@@ -44,10 +38,31 @@ char test[16] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 //enc(test,1);
 
 //dec(test,1);
+//
+//
+//
 
+/*
 for(unsigned i = 0; i < 256; i++){
     char arr[16] = {'\x3C', '\xF7', '\xBF', '\x3C', '\xD9', '\x53', '\x49', '\x57', '\x33', '\x27', '\x68', '\xBA', '\x70', '\x28', '\x65'};
     dec(arr, i);
+}
+*/
+
+int x;
+
+std::vector<int> dec_message;
+
+std::string message;
+
+while(std::cin >> std::hex >> x){
+    message.push_back((char)x);
+    dec_message.push_back(x);
+}
+
+for(unsigned i = 0; i < 256; i++){
+    std::string s2 = message;
+    enc(const_cast<char*>(s2.data()), i);
 }
 
 return 0;
