@@ -25,7 +25,6 @@ std::cout.tie(0);
 freopen("teleport.in","r",stdin);
 freopen("teleport.out","w",stdout);
 
-
 solve();
 
 return 0;
