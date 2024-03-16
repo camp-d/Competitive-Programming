@@ -12,8 +12,8 @@ std::ios_base::sync_with_stdio(false);
 std::cin.tie(0); 
 std::cout.tie(0);
 
-freopen(testing.in,r,stdin);
-freopen(testing.out,w,stdout);
+std::freopen("shell.in","r",stdin);
+std::freopen("shell.out","w",stdout);
 
 solve();
 

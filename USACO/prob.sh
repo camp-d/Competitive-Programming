@@ -15,8 +15,8 @@ std::ios_base::sync_with_stdio(false);
 std::cin.tie(0); 
 std::cout.tie(0);
 
-freopen("$2.in","r",stdin);
-freopen("$2.out","w",stdout);
+std::freopen(\"$2.in\",\"r\",stdin);
+std::freopen(\"$2.out\",\"w\",stdout);
 
 solve();
 
