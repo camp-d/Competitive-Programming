@@ -22,6 +22,13 @@ solve();
 return 0;
 }" >> temp.cpp
 
+
+echo "make
+./a.out < 1.txt
+" >> run.sh
+chmod +x run.sh
+
+touch 1.txt
 else
 echo "#include<bits/stdc++.h>
 
@@ -46,4 +53,8 @@ return 0;
 }" >> temp.cpp
 touch $2.in
 touch $2.out
+echo "make
+./a.out
+" >> run.sh
+chmod +x run.sh
 fi
