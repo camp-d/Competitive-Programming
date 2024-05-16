@@ -55,6 +55,7 @@ touch $2.in
 touch $2.out
 echo "make
 ./a.out
+cat $2.out
 " >> run.sh
 chmod +x run.sh
 fi
