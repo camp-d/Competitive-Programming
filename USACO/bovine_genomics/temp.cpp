@@ -8,7 +8,7 @@ void solve(){
 
     std::cin >> cows >> gene_count;
 
-    std::vector<std::string> genes (cows);
+    std::vector<std::string> genes (2*cows);
 
     for(auto &x : genes){
         std::cin >> x; 
@@ -32,7 +32,7 @@ void solve(){
                 break;
             }
         }
-        for(unsigned j = cows; j < cows; j++){
+        for(unsigned j = cows; j < 2*cows; j++){
             if(genes.at(j).at(i) == first_gene){
                 ruled_out_gene_position = 1;
                 break;

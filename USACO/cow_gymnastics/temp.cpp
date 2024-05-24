@@ -40,7 +40,6 @@ void solve(){
                 }
                 if(found_n == 0){
                     pairs++;
-                    std::cout << " new pair found to be consistent: " << i+1 << " " << j+1 << "\n";
                 }
             }
         }
