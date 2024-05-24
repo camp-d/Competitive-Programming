@@ -14,32 +14,24 @@ void solve(){
         std::cin >> x; 
     }
 
-    int ruled_out_gene_position = 0;
-    char first_gene = '!';
     int ans = 0;
+    int bflag = 0;
 
     for(unsigned i = 0; i < gene_count; i++){
-        ruled_out_gene_position = 0;
         for(unsigned j = 0; j < cows; j++){
-            if(i == 0){
-                first_gene = genes.at(j).at(i);
+            for(unsigned k = cows; k < cows*2; k++){
+                if(genes.at(k).at(i) == genes.at(j).at(i)){
+                    bflag = 1;
+                    break;
+                }
             }
-            else if(genes.at(j).at(i) == first_gene){
-                continue;
-            }
-            else{
-                ruled_out_gene_position = 1;
+            if(bflag == 1){
+                bflag = 0;
                 break;
             }
-        }
-        for(unsigned j = cows; j < 2*cows; j++){
-            if(genes.at(j).at(i) == first_gene){
-                ruled_out_gene_position = 1;
-                break;
+            else if(j+1 == genes.size()/2){
+                ans++;
             }
-        }
-        if(ruled_out_gene_position == 0){
-            ans++;
         }
     }
     std::cout << ans << '\n';
