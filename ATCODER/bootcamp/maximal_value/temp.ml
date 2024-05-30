@@ -1,10 +1,31 @@
-open Base;;
+let rec max ls size result = 
+    if (List.length ls = 1 && size <> 1) then
+        result + (List.hd ls)
+    else if (List.length ls = 1 && size = 1) then
+        result+(List.hd ls)+(List.hd ls)
+    else if(List.length ls = size) then
+        max ls (size-1) (result+(List.hd ls)+(List.nth ls (List.length ls)-1))
+    else
+        match List.hd ls <= List.hd (List.tl ls) with
+        | true -> max (List.tl ls) (size) (result + (List.hd ls))
+        | false -> max (List.tl ls) (size) (result + (List.hd (List.tl ls)))
+;;
 
-let n = Caml.read_int () in
-let b = Caml.read_line () |> String.split ~on:' ' |> List.map ~f:Int.of_string in
+let explode s = List.init (String.length s) (String.get s);;
 
-let rec max size = if List.
+let rec buildls lst out = 
+    match lst with
+    | [] -> out
+    | h::t -> buildls t ((int_of_string h) :: out);;
 
+let n = Scanf.sscanf (read_line()) "%d" (fun a -> a) in
 
-let answer =
-answer |> Int.to_string |> Caml.print_endline
+let b = Scanf.sscanf (read_line()) "%s" (fun a -> a) in
+
+let a = String.split_on_char ' ' b in
+
+let ls = buildls a [] in
+
+let answer = max ls (List.length ls) 0 in
+
+print_endline (string_of_int answer)
