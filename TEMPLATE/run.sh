@@ -1,3 +1,4 @@
-make
+make clean
+make sol
 t=${1:-1}
-./a.out $1
+./sol < $t.txt

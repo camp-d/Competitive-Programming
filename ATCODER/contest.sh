@@ -7,6 +7,8 @@ cp temp.cpp d.cpp
 cp temp.cpp e.cpp
 cp temp.cpp f.cpp
 cp temp.cpp g.cpp
+#This should be changed to produce alphbetical names in sequence
+#starting from A up to and including the provided command line argument
 cp 1.txt a
 cp 1.txt b
 cp 1.txt c

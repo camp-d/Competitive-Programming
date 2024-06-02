@@ -5,7 +5,7 @@ comp_flags = -g -Wall
 #sol command is for random problems in ATCODER, CODEFORCES, CSES, etc..
 
 sol : temp.cpp
-	$(comp) $(comp_flags) temp.cpp
+	$(comp) $(comp_flags) -o sol temp.cpp
 
 # a-f commands are for full contests in CODEFORCES
 
@@ -26,3 +26,6 @@ e : e.cpp
 
 f : f.cpp
 	$(comp) $(comp_flags) -o f.out f.cpp
+
+clean :
+	-rm *.out
