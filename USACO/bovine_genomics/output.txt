@@ -1,0 +1,2 @@
+g++ -g -Wall temp.cpp
+22
