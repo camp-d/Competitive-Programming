@@ -29,3 +29,4 @@ f : f.cpp
 
 clean :
 	-rm -f *.out
+	-rm -f sol

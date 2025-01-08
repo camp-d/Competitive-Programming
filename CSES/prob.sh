@@ -21,8 +21,12 @@ return 0;
 }" >> temp.cpp
 
 
-echo "make
-./a.out < 1.txt
+echo "make clean
+make sol
+t=\${1:-1} 
+./sol < \$t.txt
 " >> run.sh
 chmod +x run.sh
 touch 1.txt
+touch 2.txt
+touch 3.txt

@@ -2,32 +2,30 @@
 
 typedef long long ll;
 
+ll min_diff(std::vector<ll> const &weights, unsigned long index, ll sum1, ll sum2){
+    if(index == weights.size()){
+        return std::abs(sum1-sum2);
+    }
+    else{
+        return std::min(min_diff(weights, index+1, sum1+weights[index], sum2), min_diff(weights, index+1, sum1, sum2+weights[index]));
+    }
+}
+
 void solve(){
 
     int apples;
 
     std::cin >> apples;
 
-    std::vector<int> weights (apples);
+    std::vector<ll> weights (apples);
 
     for(auto &x: weights){
         std::cin >> x;
     }
 
-    int min = -1;
-
-    std::cout << min << '\n';
-
-
-
-
-
-
+    std::cout << min_diff(weights,0,0,0) << '\n';
 }
 
-int min_diff(std::vector<int> weights, int index, int sum1, int sum2){
-
-}
 
 int main()
 {
