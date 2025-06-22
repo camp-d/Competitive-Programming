@@ -24,7 +24,7 @@ return 0;
 
 
 echo "make
-./a.out < 1.txt
+./sol < 1.txt
 " >> run.sh
 chmod +x run.sh
 
@@ -54,7 +54,7 @@ return 0;
 touch $2.in
 touch $2.out
 echo "make
-./a.out
+./sol
 cat $2.out
 " >> run.sh
 chmod +x run.sh
